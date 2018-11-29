@@ -1,0 +1,56 @@
+$primary-color: #2CB5C4;
+$secondary-color: #F3F3F3;
+
+.home {
+  width: 100%;
+  position: fixed;
+
+  .main-nav {
+    box-shadow: 0 0 20px 10px $secondary-color;
+    a.navbar-brand {
+      padding-top: 0;
+      .brand-image {
+        width: 105px;
+        height: 25px;
+        margin-top: 5px;
+      }
+    }
+    .loggedin-user {
+      display: flex;
+      max-width: 95px;
+      justify-content: space-between;
+      text-transform: capitalize;
+
+      i{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-left: 10px;
+      }
+    }
+  }
+
+  .logout-bubble {
+    border: 1px solid lightgray;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 15px;
+    box-shadow:  6px 4px 6px -2px lightgray;
+    &:hover {
+      cursor: pointer;
+    };
+  }
+
+  .container {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+}

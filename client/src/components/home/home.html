@@ -1,0 +1,18 @@
+<section class="home">
+  <nav class="main-nav navbar navbar-light bg-faded">
+    <a class="navbar-brand" href="#">
+      <img class="brand-image" src="../../assets/logo.png" alt="">
+    </a>
+    <div v-if="username !== ''" class="loggedin-user">
+      <span>{{username}}</span>
+      <i class="fas icon-sort-down" @click="showLogout = !showLogout"></i>
+    </div>
+  </nav>
+  <div class="logout-bubble" v-if="showLogout" @click="logout">
+    Logout
+  </div>
+  <div class="container">
+    <router-view></router-view>
+  </div>
+</section>
+

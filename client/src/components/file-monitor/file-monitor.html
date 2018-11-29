@@ -1,0 +1,29 @@
+<section class="file-monitor">
+  <div class="container">
+    <p>Please paste a folder path you wish to monitor</p>
+    <input type="text" placeholder="Folder path" v-model="input.folder"/>
+    <div class="start-stop-buttons">
+      <button class="btn btn-primary" @click="startMonitoring" :disabled="isMonitoring || input.folder === ''">
+        Start
+      </button>
+      <button class="btn btn-primary" @click="stopMonitoring" :disabled="input.folder === ''">
+        Stop
+      </button>
+    </div>
+    <h3>Folder Activity</h3>
+    <div class="folder-activity">
+      <p v-if="isMonitoring">Monitoring Started!</p>
+      <p v-else>Click the 'Start' button to start monitoring!</p>
+      <div v-for="log in logs">
+        <div class="log-block">
+          <span class="log-file">{{log.file}}</span>
+          <span>{{log.event}}</span>
+          <span class="log-time">{{log.time | moment("MM-DD-YY, h:mm:ss a")}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
